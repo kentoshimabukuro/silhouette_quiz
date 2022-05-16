@@ -24,9 +24,10 @@ async function makeQuiz() {
     const img = document.querySelector("img");
     img.src =
       succsessPokemonObj.sprites.other["official-artwork"].front_default;
+    img.style.filter = "blur(1.3rem) grayscale(100%)";
 
     // リストアイテム
-    const answerButtons = document.querySelectorAll("li");
+    const answerButtons = document.querySelectorAll("button");
     const answerList = dummyNameList.slice();
     answerList.push(succsessPokemonObj.name);
     for (let i = 0; i < answerButtons.length; i++) {
@@ -40,6 +41,8 @@ async function makeQuiz() {
           console.log("Failed !!!");
         }
         h1.textContent = succsessPokemonObj.name;
+        img.style.animation = "fade 1s ease 0s 1 normal";
+        img.style.filter = "";
       });
     }
   }

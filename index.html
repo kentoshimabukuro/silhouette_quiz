@@ -3,24 +3,27 @@
   <head>
     <meta charset="UTF-8" />
 
+    <link rel="stylesheet" href="dest/css/style.css" />
+
     <title>クイーーズ</title>
   </head>
   <body>
-    <div>
-      <img
-        src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/820.png"
-      />
-    </div>
-    <div>
-      <h1>Name</h1>
-    </div>
-    <div>
-      <ul>
-        <li id="li1">aaa</li>
-        <li id="li2">bbb</li>
-        <li id="li3">ccc</li>
-        <li id="li4">ddd</li>
-      </ul>
+    <div id="backGround">
+      <div id="imageContainer">
+        <img
+          id="pokemonImage"
+          src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/820.png"
+        />
+      </div>
+      <div id="texts">
+        <h1 id="pokemonName">Name</h1>
+        <ul id="answerList">
+          <li id="li1"><button></button></li>
+          <li id="li2"><button></button></li>
+          <li id="li3"><button></button></li>
+          <li id="li4"><button></button></li>
+        </ul>
+      </div>
     </div>
 
     <script src="./main.js"></script>

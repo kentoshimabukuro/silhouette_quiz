@@ -1,11 +1,74 @@
-div {
-  text-align: center;
+$backGroundColor: #21294e;
 
+#backGround {
+  background-color: $backGroundColor;
+  width: 70vw;
+  height: 45vw;
+  display: flex;
+  margin: auto;
+}
+#imageContainer {
+  width: 35%;
+  margin: 30px;
+  margin-left: 50px;
+  flex-grow: 5;
+  img {
+    width: 90%;
+  }
+}
+
+@keyframes fade {
+  /*animation-nameで設定した値を書く*/
+
+  0% {
+    filter: blur(1.5rem);
+  }
+  100% {
+    filter: blur(0rem);
+  }
+}
+
+#texts {
+  flex-direction: column;
+  margin-top: 10%;
+  margin-left: 5%;
+  text-align: center;
+  width: 300px;
+  flex-grow: 5;
   h1 {
-    color: blue;
+    width: 100%;
+    font-size: 3em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+h1,
+ul {
+  color: yellow;
+}
+
+ul {
+  list-style: none;
+  width: 100%;
+  vertical-align: middle;
+  padding: 0px;
+
+  li {
+    margin: 5px;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
   }
 
-  h2 {
-    background-color: green;
+  button {
+    font-size: 20px;
+    height: 30px;
+    border: 1px solid;
+    border-color: yellow;
+    color: yellow;
+    background-color: $backGroundColor;
+    width: 90%;
   }
 }
