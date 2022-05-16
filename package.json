@@ -1,0 +1,26 @@
+{
+  "name": "silhouette_quiz",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "scss": "node-sass src/scss/ --output dest/css/ --output-style compressed --source-map true --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kentoshimabukuro/silhouette_quiz.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kentoshimabukuro/silhouette_quiz/issues"
+  },
+  "homepage": "https://github.com/kentoshimabukuro/silhouette_quiz#readme",
+  "dependencies": {
+    "eslint": "^8.15.0"
+  },
+  "devDependencies": {
+    "node-sass": "^7.0.1"
+  }
+}

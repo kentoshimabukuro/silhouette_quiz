@@ -1,0 +1,10 @@
+{
+  "extends": "eslint:recommended",
+  "rules": {
+    "array-callback-return": "error"
+  },
+  "env": {
+    "browser": true,
+    "es6": true
+  }
+}
