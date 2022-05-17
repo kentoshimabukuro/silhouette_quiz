@@ -8,6 +8,8 @@ function shuffle(arr) {
   return result;
 }
 
+let alreadySet = false;
+
 async function makeQuiz(quizName, offset = 0) {
   // ポケモンのリストを取ってくる
 
@@ -39,6 +41,7 @@ async function makeQuiz(quizName, offset = 0) {
     } else {
       img.style.filter = "blur(1.3rem) grayscale(100%)";
     }
+    img.style.animation = "";
 
     // リストアイテム
     const answerButtons = document.querySelectorAll("li button");
@@ -48,26 +51,29 @@ async function makeQuiz(quizName, offset = 0) {
     for (let i = 0; i < answerButtons.length; i++) {
       answerButtons[i].style.backgroundColor = "#21294e";
       answerButtons[i].textContent = showAnswerList[i];
-      answerButtons[i].addEventListener("click", (event) => {
-        // クリック時に正解と不正解がconsole.logされる
-        console.log(event);
-        if (event.target.textContent === succsessPokemonObj.name) {
-          console.log("Success !!!");
-          event.target.style.backgroundColor = "springgreen";
-        } else {
-          console.log("Failed !!!");
-          event.target.style.backgroundColor = "red";
-        }
-        h1.textContent = succsessPokemonObj.name;
-        if (quizName === "シルエットクイズ") {
-          img.style.animation = "fadeBrightness 1s ease 0s 1 normal";
-          img.style.filter = "brightness(100%)";
-        } else {
-          img.style.animation = "fade 1s ease 0s 1 normal";
-          img.style.filter = "";
-        }
-      });
+      if (!alreadySet) {
+        answerButtons[i].addEventListener("click", (event) => {
+          // クリック時に正解と不正解がconsole.logされる
+          console.log(event);
+          if (event.target.textContent === succsessPokemonObj.name) {
+            console.log("Success !!!");
+            event.target.style.backgroundColor = "springgreen";
+          } else {
+            console.log("Failed !!!");
+            event.target.style.backgroundColor = "red";
+          }
+          h1.textContent = succsessPokemonObj.name;
+          if (quizName === "シルエットクイズ") {
+            img.style.animation = "fadeBrightness 1s ease 0s 1 normal";
+            img.style.filter = "";
+          } else {
+            img.style.animation = "fade 1s ease 0s 1 normal";
+            img.style.filter = "";
+          }
+        });
+      }
     }
+    alredySet = true;
   }
 
   setHtml();
