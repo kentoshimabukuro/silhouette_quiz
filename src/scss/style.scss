@@ -12,8 +12,22 @@ $backGroundColor: #21294e;
   margin: 30px;
   margin-left: 50px;
   flex-grow: 5;
-  img {
-    width: 90%;
+
+  #imgParent {
+    position: relative;
+  }
+
+  #frameImage {
+    position: absolute;
+    width: 80%;
+  }
+
+  #pokemonImage {
+    position: absolute;
+    width: 70%;
+    top: 35px;
+    left: 20px;
+    // filter: brightness(0%);
   }
 }
 
@@ -25,6 +39,16 @@ $backGroundColor: #21294e;
   }
   100% {
     filter: blur(0rem);
+  }
+}
+@keyframes fadeBrightness {
+  /*animation-nameで設定した値を書く*/
+
+  0% {
+    filter: brightness(0%);
+  }
+  100% {
+    filter: brightness(100%);
   }
 }
 
@@ -71,4 +95,23 @@ ul {
     background-color: $backGroundColor;
     width: 90%;
   }
+}
+
+#buttons {
+  margin: auto;
+  text-align: center;
+  width: 60vw;
+  height: 50px;
+
+  button {
+    margin-top: 10px;
+    width: 40%;
+    height: 50px;
+  }
+}
+#offsetContainer {
+  margin: auto;
+  margin-top: 15px;
+  text-align: center;
+  width: 60vw;
 }

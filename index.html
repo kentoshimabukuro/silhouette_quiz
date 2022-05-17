@@ -10,10 +10,13 @@
   <body>
     <div id="backGround">
       <div id="imageContainer">
-        <img
-          id="pokemonImage"
-          src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/820.png"
-        />
+        <div id="imgParent">
+          <img id="frameImage" src="assets/frame.png" alt="" />
+          <img
+            id="pokemonImage"
+            src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/493.png"
+          />
+        </div>
       </div>
       <div id="texts">
         <h1 id="pokemonName">Name</h1>
@@ -24,6 +27,13 @@
           <li id="li4"><button></button></li>
         </ul>
       </div>
+    </div>
+    <div id="buttons">
+      <button class="quizSelect" id="quiz1">シルエットクイズ</button>
+      <button class="quizSelect" id="quiz2">高難易度クイズ</button>
+    </div>
+    <div id="offsetContainer">
+      <input type="text" id="offsetValue" value="0" />
     </div>
 
     <script src="./main.js"></script>

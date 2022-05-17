@@ -45,16 +45,20 @@ class quizManeger {
   constructor() {}
 
   // ポケモンAPIから名前のリストを取ってくる
-  getPokemonNames(num) {
-    const url = "https://pokeapi.co/api/v2/pokemon/?limit=" + num;
+  getPokemonNames(numOfPokemon, offset = 0) {
+    const url =
+      "https://pokeapi.co/api/v2/pokemon/?limit=" +
+      numOfPokemon +
+      "&offset=" +
+      offset;
     return fetch(url)
       .then((res) => res.json())
       .then((data) => data.results);
   }
 
   // 取ってきた名前のリストの中から、指定したインデックスのポケモン情報を取ってくる
-  getPokemonDataInList(list, num) {
-    return fetch(list[num].url).then((res) => res.json());
+  getPokemonDataInList(list, numOfPokemon) {
+    return fetch(list[numOfPokemon].url).then((res) => res.json());
   }
 
   // 取ってきた名前のリストから、ランダムな３つの不正解の名前を返す
